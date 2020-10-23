@@ -2,12 +2,11 @@
   <Layout>
     <div class="project">
 
-      <div class="container">
+      <div class="container project-container">
 
         <div class="project-header">
           <h1 class="project-title" v-html="$page.post.title" />
           <div class="project-info">
-
             <div class="categories-container">
               <div class="categories">
                 <span class="label">Categories</span>
@@ -19,15 +18,13 @@
                 />
               </div>
             </div>
-
-            <div class="year-container">
-              <span class="label">Year</span>
+            <div class="date-container">
+              <span class="label">Date</span>
               <div v-html="$page.post.date"/>
             </div>
           </div>
         </div>
-
-        <div v-html="$page.post.content" class="content" />
+        <ProjectContent :content="$page.post.content" />
 
       </div>
 
@@ -39,17 +36,21 @@
 query ProjectPost ($path: String!) {
   post: projectPost (path: $path) {
     title
-    date (format: "YYYY")
+    date (format: "D. MMMM YYYY")
     content
     categories
-    project_bg_color
-    project_fg_color
   }
 }
 </page-query>
 
 <script>
+
+import ProjectContent from "@/components/ProjectContent"
+
 export default {
+  components: {
+    ProjectContent
+  },
   metaInfo () {
     return {
       title: this.$page.post.title,
@@ -62,6 +63,10 @@ export default {
 </script>
 
 <style scoped>
+
+.project-container {
+  max-width: 1200px;
+}
 .project-header {
   padding: 20vh 0 4rem 0;
 }

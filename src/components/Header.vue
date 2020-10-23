@@ -3,11 +3,7 @@
         <div class="container">
             <div class="left">
                 <g-link :to="{ name: 'home' }" class="home-link">
-                    <img 
-                        src="../../static/logo.svg"
-                        :alt="settings.site_name" 
-                        class="logo"
-                    />
+                    Shocking2
                 </g-link>
             </div>
             <nav class="nav right">
@@ -22,7 +18,6 @@
 export default {
   data() {
     return {
-        logo: require("../../static/logo.svg"),
         settings: require("../../data/theme.json")
     }
   }

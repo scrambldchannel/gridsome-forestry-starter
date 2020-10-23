@@ -59,6 +59,7 @@ export default {
 .news-container {
   max-width: 840px;
 }
+
 .news-header {
   padding: 2rem 0 4rem 0;
 }
