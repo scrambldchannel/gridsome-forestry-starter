@@ -2,9 +2,9 @@
   <Layout>
 
     <div class="container">
-      <div class="journal-hero">
-        <h1 class="journal-header">
-          a wise person once said...
+      <div class="news-hero">
+        <h1 class="news-header">
+          Recent blog posts
         </h1>
       </div>
     </div>
@@ -13,11 +13,11 @@
       :to="item.node.path"
       v-for="item in $page.posts.edges" 
       :key="item.node.id"
-      class="journal-post"
+      class="news-post"
     >
-      <div class="container journal">
-        <h2 class="journal-title">{{ item.node.title }}</h2>
-        <p class="journal-excerpt">{{ item.node.excerpt }}</p>
+      <div class="container news">
+        <h2 class="news-title">{{ item.node.title }}</h2>
+        <p class="news-excerpt">{{ item.node.excerpt }}</p>
       </div>
     </g-link>
       
@@ -25,8 +25,8 @@
 </template>
 
 <page-query>
-query Journal {
-	posts: allJournalPost {
+query news {
+	posts: allNewsPost {
     edges {
       node {
         id
@@ -45,56 +45,56 @@ export default {
 </script>
 
 <style scoped>
-.container.journal {
+.container.new {
   max-width: 720px;
 }
-.journal-hero {
+.news-hero {
   padding: 4rem 0;
   text-align: center;
   color: var(--color-base-1);
 }
-.journal-header {
+.news-header {
   font-size: 3rem;
   font-weight: 700;
   padding: 0;
   margin: 0;
 }
-.journal-post {
+.news-post {
   display: block;
   padding: 2rem 0;
   text-decoration: none;
   transition: background 0.5s ease;
 }
-.journal-post > * {
+.news-post > * {
   transition: transform 0.5s ease;
 }
-.journal-post:hover {
+.news-post:hover {
   background-color: var(--color-base-1);
 }
-.journal-post:hover > * {
+.news-post:hover > * {
   transform: translateX(4rem);
 }
-.journal-post h1,
-.journal-post h2 {
+.news-post h1,
+.news-post h2 {
   margin: 0;
   padding: 0;
 }
-.journal-title {
+.news-title {
   font-size: 2rem;
   color: var(--color-contrast);
 }
-.journal-excerpt {
+.news-excerpt {
   color: var(--color-contrast-1);
 }
 
 @media (min-width: 560px) {
-  .journal-post {
+  .news-post {
     padding: 3rem 0;
   }
 }
 
 @media (min-width: 860px) {
-  .journal-post {
+  .news-post {
     padding: 5rem 0;
   }
 }

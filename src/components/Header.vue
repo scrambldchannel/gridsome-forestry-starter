@@ -4,7 +4,7 @@
             <div class="left">
                 <g-link :to="{ name: 'home' }" class="home-link">
                     <img 
-                        src="../../static/logo.png"
+                        src="../../static/logo.svg"
                         :alt="settings.site_name" 
                         class="logo"
                     />

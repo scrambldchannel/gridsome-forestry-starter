@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="journal-content"
+        class="news-content"
         v-html="content"
     />
 </template>
