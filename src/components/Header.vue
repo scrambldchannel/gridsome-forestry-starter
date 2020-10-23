@@ -4,7 +4,7 @@
             <div class="left">
                 <g-link :to="{ name: 'home' }" class="home-link">
                     <img 
-                        src="../../static/logo.svg"
+                        src="../../static/logo.png"
                         :alt="settings.site_name" 
                         class="logo"
                     />
@@ -12,7 +12,7 @@
             </div>
             <nav class="nav right">
                 <g-link class="nav__link" to="/news">News</g-link>
-                <g-link class="nav__link" to="/contact">Say Contact!</g-link>
+                <g-link class="nav__link" to="/contact">Contact</g-link>
             </nav>
         </div>
     </header>
