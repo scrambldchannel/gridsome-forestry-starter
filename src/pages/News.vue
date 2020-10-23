@@ -57,7 +57,6 @@ export default {
 .news-hero {
   padding: 4rem 0;
   text-align: center;
-  color: var(--color-base-1);
 }
 .news-header {
   font-size: 3rem;
