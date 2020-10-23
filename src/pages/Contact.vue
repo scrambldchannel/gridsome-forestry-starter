@@ -34,7 +34,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+    metaInfo () {
+      return {
+        title: "Contact"
+      }
+    }
+}
 </script>
 
 <style scoped>

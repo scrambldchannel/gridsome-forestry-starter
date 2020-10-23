@@ -2,11 +2,11 @@
 // Learn more: https://gridsome.org/docs/config
 
 module.exports = {
-  siteName: "Portfolio",
-  siteUrl: `https://www.itsnwa.com`,
+  siteName: "Shocking2",
+  siteUrl: `https://www.shocking2.netlify.com`,
   host: "0.0.0.0",
-  titleTemplate: "%s - NWA",
-  siteDescription: "Creative technologist",
+  titleTemplate: "%s - Shocking2",
+  siteDescription: "The Nexus of Art and Code",
   plugins: [
     {
       use: "@gridsome/source-filesystem",
