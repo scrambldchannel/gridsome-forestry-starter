@@ -56,10 +56,10 @@ export default {
 }
 .news-hero {
   padding: 4rem 0;
-  text-align: center;
+  text-align: left;
 }
 .news-header {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   padding: 0;
   margin: 0;

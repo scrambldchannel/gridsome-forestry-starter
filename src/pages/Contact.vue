@@ -1,11 +1,14 @@
 <template>
   <Layout>
     <div class="container">
-
-      <div class="contact-header">
-        <h1 class="contact-title">Contact</h1>
-        <p>Leave me a note with any questions you might have, I'll get back to you as soon as possible.</p>
+      <div class="contact-hero">
+        <h1 class="contact-header">
+          Contact
+        </h1>
       </div>
+    </div>
+    <div class="container">
+
 
       <form class="contact-form" name="contact">
 
@@ -34,18 +37,19 @@
 </template>
 
 <script>
-export default {
-    metaInfo () {
-      return {
-        title: "Contact"
-      }
-    }
-}
+export default {}
 </script>
 
 <style scoped>
 .contact-header {
-  padding: 2rem 0 4rem 0;
+  font-size: 4rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+.contact-hero {
+  padding: 4rem 0;
+  text-align: left;
 }
 .contact-title {
   font-size: 4rem;
