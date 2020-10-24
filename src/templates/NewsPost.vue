@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 .news-container {
-  max-width: 840px;
+  max-width: 1200px;
 }
 
 .news-header {
