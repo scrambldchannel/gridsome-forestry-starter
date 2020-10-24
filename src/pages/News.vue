@@ -51,9 +51,6 @@ export default {
 </script>
 
 <style scoped>
-.container.new {
-  max-width: 720px;
-}
 .news-hero {
   padding: 4rem 0;
   text-align: left;
