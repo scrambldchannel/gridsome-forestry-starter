@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="latest-news-heading container">
-        <span class="label">Latest and greatest</span>
+        <div class="latest-snippets-heading container">
+        <span class="label">Latest Snippets</span>
         </div>
-        <div class="latest-news">
+        <div class="latest-snippets">
         <div class="container">
-            <g-link :to="item.node.path" class="news" v-for="item in news" :key="item.node.id">
-              <h3 class="news-title">{{ item.node.title }}</h3>
+            <g-link :to="item.node.path" class="snippets" v-for="item in snippets" :key="item.node.id">
+              <h3 class="snippets-title">{{ item.node.title }}</h3>
             </g-link>
         </div>
         </div>
@@ -16,7 +16,7 @@
 <script>
 export default {
     props: {
-        news: {
+        snippets: {
             type: Array,
             required: true
         }
@@ -25,23 +25,23 @@ export default {
 </script>
 
 <style scoped>
-.latest-news-heading {
+.latest-snippets-heading {
   margin-top: 6rem;
   margin-bottom: 1rem;
   font-size: 0.6rem;
   font-weight: 400;
   text-transform: uppercase;
 }
-.latest-news {
+.latest-snippets {
   max-width: 100%;
   margin: 0 2rem;
   border: 1px solid var(--color-base-1);
 }
-.latest-news > .container {
+.latest-snippets > .container {
   display: flex;
   flex-wrap: wrap;
 }
-.news {
+.snippets {
   flex: 0 0 100%;
   display: block;
   padding: 2rem;
@@ -50,57 +50,57 @@ export default {
   border-bottom: 1px solid var(--color-base-1);
 }
 
-.news:last-of-type {
+.snippets:last-of-type {
   border-bottom: 0;
 }
 
-.news:hover {
+.snippets:hover {
   background: var(--color-base-1);
 }
 
-.news-title {
+.snippets-title {
   font-size: 1rem;
   line-height: 1.35;
 }
 
 @media (min-width: 580px) {
-  .news {
+  .snippets {
     flex: 0 0 50%;
   }
-  .news:nth-child(1) {
+  .snippets:nth-child(1) {
     border-right: 1px solid var(--color-base-1);
     border-bottom: 1px solid var(--color-base-1);
   }
 
-  .news:nth-child(2) {
+  .snippets:nth-child(2) {
     border-bottom: 1px solid var(--color-base-1);
   }
 
-  .news:nth-child(3) {
+  .snippets:nth-child(3) {
     border-right: 1px solid var(--color-base-1);
     border-bottom: 0;
   }
 }
 
 @media (min-width: 920px) {
-  .news {
+  .snippets {
     flex: 0 0 25%;
   }
-  .news:nth-child(1) {
+  .snippets:nth-child(1) {
     border: 0;
     border-right: 1px solid var(--color-base-1);
   }
 
-  .news:nth-child(2) {
+  .snippets:nth-child(2) {
     border: 0;
     border-right: 1px solid var(--color-base-1);
   }
 
-  .news:nth-child(3) {
+  .snippets:nth-child(3) {
     border: 0;
     border-right: 1px solid var(--color-base-1);
   }
-  .latest-news {
+  .latest-snippets {
     margin: 0;
     border-left: 0;
     border-right: 0;

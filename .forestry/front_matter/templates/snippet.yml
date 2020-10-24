@@ -1,5 +1,5 @@
 ---
-label: News
+label: Snippet
 hide_body: false
 fields:
 - type: text

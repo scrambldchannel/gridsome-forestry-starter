@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="news-content"
+        class="snippets-content"
         v-html="content"
     />
 </template>

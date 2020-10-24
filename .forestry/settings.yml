@@ -12,12 +12,12 @@ sections:
   templates:
   - project
 - type: directory
-  path: news
-  label: News
+  path: snippets
+  label: Snippets
   create: documents
   match: "**/*.md"
   templates:
-  - news
+  - snippet
 - type: document
   path: data/theme.json
   label: Theme config

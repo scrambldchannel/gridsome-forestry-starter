@@ -25,7 +25,7 @@
 </template>
 
 <page-query>
-query news {
+query projects {
 	posts: allProjectPost {
     edges {
       node {

@@ -2,8 +2,8 @@
   <Layout>
 
     <div class="container">
-      <div class="news-hero">
-        <h1 class="news-header">
+      <div class="snippets-hero">
+        <h1 class="snippets-header">
           Recent Snippets
         </h1>
       </div>
@@ -13,10 +13,10 @@
       :to="item.node.path"
       v-for="item in $page.posts.edges" 
       :key="item.node.id"
-      class="news-post">
-      <div class="container news">
-        <h2 class="news-title">{{ item.node.title }}</h2>
-        <p class="news-excerpt">{{ item.node.excerpt }}</p>
+      class="snippets-post">
+      <div class="container snippets">
+        <h2 class="snippets-title">{{ item.node.title }}</h2>
+        <p class="snippets-excerpt">{{ item.node.excerpt }}</p>
       </div>
     </g-link>
       
@@ -24,8 +24,8 @@
 </template>
 
 <page-query>
-query news {
-	posts: allNewsPost {
+query snippets {
+	posts: allSnippetsPost {
     edges {
       node {
         id
@@ -42,7 +42,7 @@ query news {
 export default {
       metaInfo () {
       return {
-        title: "News"
+        title: "Snippets"
       }
     }
 
@@ -50,52 +50,52 @@ export default {
 </script>
 
 <style scoped>
-.news-hero {
+.snippets-hero {
   padding: 8rem 0;
   text-align: left;
 }
-.news-header {
+.snippets-header {
   font-size: 4rem;
   font-weight: 700;
   padding: 0;
   margin: 0;
 }
-.news-post {
+.snippets-post {
   display: block;
   padding: 2rem 0;
   text-decoration: none;
   transition: background 0.5s ease;
 }
-.news-post > * {
+.snippets-post > * {
   transition: transform 0.5s ease;
 }
-.news-post:hover {
+.snippets-post:hover {
   background-color: var(--color-base-1);
 }
-.news-post:hover > * {
+.snippets-post:hover > * {
   transform: translateX(4rem);
 }
-.news-post h1,
-.news-post h2 {
+.snippets-post h1,
+.snippets-post h2 {
   margin: 0;
   padding: 0;
 }
-.news-title {
+.snippets-title {
   font-size: 2rem;
   color: var(--color-contrast);
 }
-.news-excerpt {
+.snippets-excerpt {
   color: var(--color-contrast-1);
 }
 
 @media (min-width: 560px) {
-  .news-post {
+  .snippets-post {
     padding: 3rem 0;
   }
 }
 
 @media (min-width: 860px) {
-  .news-post {
+  .snippets-post {
     padding: 5rem 0;
   }
 }

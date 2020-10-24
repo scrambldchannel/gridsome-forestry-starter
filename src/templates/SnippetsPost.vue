@@ -1,27 +1,27 @@
 <template>
   <Layout>
-    <div class="news">
-      <div class="container news-container">
+    <div class="snippets">
+      <div class="container snippets-container">
 
-        <div class="news-header">
-          <h1 v-html="$page.post.title" class="news-title" />
-          <div class="news-meta">
-            <div class="news-author">
+        <div class="snippets-header">
+          <h1 v-html="$page.post.title" class="snippets-title" />
+          <div class="snippets-meta">
+            <div class="snippets-author">
               <span class="label">Author</span>
               <span class="author-name" v-text="$page.post.author" />
             </div>
-            <div class="news-date">
+            <div class="snippets-date">
               <span class="label">Date</span>
               <div v-text="$page.post.date"/>
             </div>
-            <div class="news-time">
+            <div class="snippets-time">
               <span class="label">Time</span>
               <span>{{ $page.post.timeToRead }} min read</span>
             </div>
           </div>          
         </div>
 
-        <NewsContent :content="$page.post.content" />
+        <SnippetsContent :content="$page.post.content" />
 
       </div>
     </div>
@@ -29,8 +29,8 @@
 </template>
 
 <page-query>
-query NewsPost ($path: String!) {
-  post: newsPost (path: $path) {
+query SnippetsPost ($path: String!) {
+  post: snippetsPost (path: $path) {
     title
     author
     date (format: "D. MMMM YYYY")
@@ -41,11 +41,11 @@ query NewsPost ($path: String!) {
 </page-query>
 
 <script>
-import NewsContent from "@/components/NewsContent"
+import SnippetsContent from "@/components/SnippetsContent"
 
 export default {
   components: {
-    NewsContent
+    SnippetsContent
   },
   metaInfo () {
     return {
@@ -56,27 +56,27 @@ export default {
 </script>
 
 <style scoped>
-.news-container {
+.snippets-container {
   max-width: 1200px;
 }
 
-.news-header {
+.snippets-header {
   padding: 8rem 0 4rem 0;
 }
-.news-title {
+.snippets-title {
   font-size: 4rem;
   margin: 0 0 4rem 0;
   padding: 0;
 }
-.news-meta {
+.snippets-meta {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8rem;
 }
-.news-meta > div {
+.snippets-meta > div {
   margin-right: 4rem;
 }
-.news-meta > div:last-of-type {
+.snippets-meta > div:last-of-type {
   margin: 0;
 }
 </style>
