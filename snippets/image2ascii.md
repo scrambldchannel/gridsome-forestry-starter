@@ -6,11 +6,13 @@ excerpt: Suddenly I had a yearning to turn photos into Ascii Art and wanted a sc
 
 ---
 
+I had a yearning to turn photos into Ascii Art and wanted a simple, automated way to do it. There are swathes of tools online that will convert an image to text but I wanted image to image. I found this gist where someone had written a simple Python script (pleasingly named ```asciinator.py```) that wrapped around ffmeg which does the heavy lifting. I fiddled around with the code a bit and got it working, at least well enough for my immediate needs. 
+
+![](/uploads/me_and_chimpy.jpg)
+
+
 ![](/uploads/ascii_art.png)
 
-I had a yearning to turn photos into Ascii Art and wanted a simple, automated way to do it. There are swathes of tools online that will convert an image to text but I wanted image to image. I found this gist where someone had written a simple Python script (pleasingly named ```asciinator.py```) that wrapped around ffmeg which does the heavy lifting.
-
-I fiddled around with the code a bit and got it working, at least well enough for my immediate needs. 
 
 
 ```python
