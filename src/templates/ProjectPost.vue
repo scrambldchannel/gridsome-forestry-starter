@@ -1,33 +1,29 @@
 <template>
   <Layout>
     <div class="project">
-
       <div class="container project-container">
 
         <div class="project-header">
-          <h1 class="project-title" v-html="$page.post.title" />
-          <div class="project-info">
-            <div class="categories-container">
-              <div class="categories">
-                <span class="label">Categories</span>
-                <span 
-                  class="category"
-                  v-for="(category, index) in $page.post.categories" 
-                  :key="index"
-                  v-text="category"
-                />
-              </div>
+          <h1 v-html="$page.post.title" class="project-title" />
+          <div class="project-meta">
+            <div class="project-author">
+              <span class="label">Author</span>
+              <span class="author-name" v-text="$page.post.author" />
             </div>
-            <div class="date-container">
+            <div class="project-date">
               <span class="label">Date</span>
-              <div v-html="$page.post.date"/>
+              <div v-text="$page.post.date"/>
             </div>
-          </div>
+            <div class="project-time">
+              <span class="label">Time</span>
+              <span>{{ $page.post.timeToRead }} min read</span>
+            </div>
+          </div>          
         </div>
+
         <ProjectContent :content="$page.post.content" />
 
       </div>
-
     </div>
   </Layout>
 </template>
@@ -36,15 +32,15 @@
 query ProjectPost ($path: String!) {
   post: projectPost (path: $path) {
     title
+    author
     date (format: "D. MMMM YYYY")
+    timeToRead
     content
-    categories
   }
 }
 </page-query>
 
 <script>
-
 import ProjectContent from "@/components/ProjectContent"
 
 export default {
@@ -53,43 +49,34 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.$page.post.title,
-      bodyAttrs: {
-        style: `background-color: ${this.$page.post.project_bg_color ? this.$page.post.project_bg_color : 'var(--color-base)'}; color: ${this.$page.post.project_fg_color ? this.$page.post.project_fg_color : 'var(--color-contrast)'}`
-      }
+      title: this.$page.post.title
     }
   }
 }
 </script>
 
 <style scoped>
-
 .project-container {
   max-width: 1200px;
 }
+
 .project-header {
-  padding: 20vh 0 4rem 0;
+  padding: 8rem 0 4rem 0;
 }
 .project-title {
   font-size: 4rem;
   margin: 0 0 4rem 0;
   padding: 0;
 }
-.project-info {
+.project-meta {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8rem;
 }
-.project-info > div {
+.project-meta > div {
   margin-right: 4rem;
 }
-.project-info > div:last-of-type {
+.project-meta > div:last-of-type {
   margin: 0;
-}
-.category:after {
-  content: ', '
-}
-.category:last-of-type:after {
-  content: '';
 }
 </style>

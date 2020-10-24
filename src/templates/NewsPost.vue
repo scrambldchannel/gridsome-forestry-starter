@@ -61,7 +61,7 @@ export default {
 }
 
 .news-header {
-  padding: 2rem 0 4rem 0;
+  padding: 8rem 0 4rem 0;
 }
 .news-title {
   font-size: 4rem;

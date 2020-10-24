@@ -2,9 +2,9 @@
   <Layout>
 
     <div class="container">
-      <div class="news-hero">
-        <h1 class="news-header">
-          Recent Snippets
+      <div class="project-hero">
+        <h1 class="project-header">
+          Recent Articles
         </h1>
       </div>
     </div>
@@ -13,10 +13,11 @@
       :to="item.node.path"
       v-for="item in $page.posts.edges" 
       :key="item.node.id"
-      class="news-post">
-      <div class="container news">
-        <h2 class="news-title">{{ item.node.title }}</h2>
-        <p class="news-excerpt">{{ item.node.excerpt }}</p>
+      class="project-post"
+    >
+      <div class="container projects">
+        <h2 class="project-title">{{ item.node.title }}</h2>
+        <p class="project-excerpt">{{ item.node.excerpt }}</p>
       </div>
     </g-link>
       
@@ -25,7 +26,7 @@
 
 <page-query>
 query news {
-	posts: allNewsPost {
+	posts: allProjectPost {
     edges {
       node {
         id
@@ -42,7 +43,7 @@ query news {
 export default {
       metaInfo () {
       return {
-        title: "News"
+        title: "Projects"
       }
     }
 
@@ -50,52 +51,52 @@ export default {
 </script>
 
 <style scoped>
-.news-hero {
+.project-hero {
   padding: 8rem 0;
   text-align: left;
 }
-.news-header {
+.project-header {
   font-size: 4rem;
   font-weight: 700;
   padding: 0;
   margin: 0;
 }
-.news-post {
+.project-post {
   display: block;
   padding: 2rem 0;
   text-decoration: none;
   transition: background 0.5s ease;
 }
-.news-post > * {
+.project-post > * {
   transition: transform 0.5s ease;
 }
-.news-post:hover {
+.project-post:hover {
   background-color: var(--color-base-1);
 }
-.news-post:hover > * {
+.project-post:hover > * {
   transform: translateX(4rem);
 }
-.news-post h1,
-.news-post h2 {
+.project-post h1,
+.project-post h2 {
   margin: 0;
   padding: 0;
 }
-.news-title {
+.project-title {
   font-size: 2rem;
   color: var(--color-contrast);
 }
-.news-excerpt {
+.project-excerpt {
   color: var(--color-contrast-1);
 }
 
 @media (min-width: 560px) {
-  .news-post {
+  .project-post {
     padding: 3rem 0;
   }
 }
 
 @media (min-width: 860px) {
-  .news-post {
+  .project-post {
     padding: 5rem 0;
   }
 }

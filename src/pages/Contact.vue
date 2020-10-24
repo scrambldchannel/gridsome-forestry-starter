@@ -48,7 +48,7 @@ export default {}
   margin: 0;
 }
 .contact-hero {
-  padding: 4rem 0;
+  padding: 8rem 0;
   text-align: left;
 }
 .contact-title {
